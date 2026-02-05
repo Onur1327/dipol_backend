@@ -1,0 +1,1069 @@
+
+--- Manual Request Start [2026-02-05T10:03:47.812Z] ---
+{
+  "url": "https://sandbox-api.iyzipay.com/payment/3dsecure/initialize",
+  "endpointPath": "/payment/3dsecure/initialize",
+  "body": {
+    "locale": "tr",
+    "conversationId": "69846b037a2ae42df483f8d7",
+    "price": "900.0",
+    "paidPrice": "900.0",
+    "currency": "TRY",
+    "installment": "1",
+    "basketId": "69846b037a2ae42df483f8d7",
+    "paymentChannel": "WEB",
+    "ip": "::1",
+    "paymentCard": {
+      "cardHolderName": "TEST KULLANICI",
+      "cardNumber": "5528790000000008",
+      "expireMonth": "12",
+      "expireYear": "2030",
+      "cvc": "123",
+      "registerCard": 0
+    },
+    "buyer": {
+      "id": "6938309ed20f28ea140bdb75",
+      "name": "Admin",
+      "surname": "Butik",
+      "gsmNumber": "+505555555",
+      "email": "admin@dipolbutik.com",
+      "identityNumber": "10000000146",
+      "registrationAddress": "dsakndmlka",
+      "city": "izmir",
+      "country": "Türkiye",
+      "zipCode": "35500",
+      "ip": "::1"
+    },
+    "shippingAddress": {
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye",
+      "address": "dsakndmlka",
+      "zipCode": "35500"
+    },
+    "billingAddress": {
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye",
+      "address": "dsakndmlka",
+      "zipCode": "35500"
+    },
+    "basketItems": [
+      {
+        "id": "6981fcb5218a8a424bd97575_0",
+        "name": "4’lü Modern Silindir Set",
+        "category1": "Giyim",
+        "itemType": "PHYSICAL",
+        "price": "800.0"
+      },
+      {
+        "id": "SHIPPING_FEE",
+        "name": "Kargo Ücreti",
+        "category1": "Lojistik",
+        "itemType": "VIRTUAL",
+        "price": "100.0"
+      }
+    ],
+    "callbackUrl": "http://localhost:3002/api/payment/callback"
+  }
+}
+
+--- Manual Request Result [2026-02-05T10:03:48.146Z] ---
+{
+  "status": "failure",
+  "errorCode": "1001",
+  "errorMessage": "api bilgileri bulunamadı",
+  "locale": "tr",
+  "systemTime": 1770285828158,
+  "conversationId": "69846b037a2ae42df483f8d7"
+}
+
+--- Manual Request Start [2026-02-05T10:07:08.481Z] ---
+{
+  "url": "https://sandbox-api.iyzipay.com/payment/3dsecure/initialize",
+  "endpointPath": "/payment/3dsecure/initialize",
+  "apiKeyPrefix": "m31l***",
+  "body": {
+    "locale": "tr",
+    "conversationId": "69846bcb7a2ae42df483f8de",
+    "price": "900.0",
+    "paidPrice": "900.0",
+    "currency": "TRY",
+    "installment": "1",
+    "basketId": "69846bcb7a2ae42df483f8de",
+    "paymentChannel": "WEB",
+    "ip": "::1",
+    "paymentCard": {
+      "cardHolderName": "TEST KULLANICI",
+      "cardNumber": "5528790000000008",
+      "expireMonth": "12",
+      "expireYear": "2030",
+      "cvc": "123",
+      "registerCard": 0
+    },
+    "buyer": {
+      "id": "6938309ed20f28ea140bdb75",
+      "name": "Admin",
+      "surname": "Butik",
+      "gsmNumber": "+505555555",
+      "email": "admin@dipolbutik.com",
+      "identityNumber": "10000000146",
+      "registrationAddress": "dsakndmlka",
+      "city": "izmir",
+      "country": "Türkiye",
+      "zipCode": "35500",
+      "ip": "::1"
+    },
+    "shippingAddress": {
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye",
+      "address": "dsakndmlka",
+      "zipCode": "35500"
+    },
+    "billingAddress": {
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye",
+      "address": "dsakndmlka",
+      "zipCode": "35500"
+    },
+    "basketItems": [
+      {
+        "id": "6981fcb5218a8a424bd97575_0",
+        "name": "4’lü Modern Silindir Set",
+        "category1": "Giyim",
+        "itemType": "PHYSICAL",
+        "price": "800.0"
+      },
+      {
+        "id": "SHIPPING_FEE",
+        "name": "Kargo Ücreti",
+        "category1": "Lojistik",
+        "itemType": "VIRTUAL",
+        "price": "100.0"
+      }
+    ],
+    "callbackUrl": "http://localhost:3002/api/payment/callback"
+  }
+}
+
+--- Manual Request Result [2026-02-05T10:07:08.685Z] ---
+{
+  "status": "failure",
+  "errorCode": "1001",
+  "errorMessage": "api bilgileri bulunamadı",
+  "locale": "tr",
+  "systemTime": 1770286028703,
+  "conversationId": "69846bcb7a2ae42df483f8de"
+}
+
+--- Manual Request Start [2026-02-05T10:18:04.501Z] ---
+{
+  "url": "https://sandbox-api.iyzipay.com/payment/3dsecure/initialize",
+  "endpointPath": "/payment/3dsecure/initialize",
+  "apiKeyPrefix": "m31l***",
+  "headers": {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "x-iyzi-rnd": "6o8aicbf",
+    "x-iyzi-client-version": "iyzipay-node-manual-1.0.1",
+    "Authorization": "IYZWSv2 YXBpS2V...",
+    "Authorization_Fallback": "IYZWS m31lBTyOx..."
+  },
+  "body": {
+    "locale": "tr",
+    "conversationId": "69846e5b7a2ae42df483f8e5",
+    "price": "900.0",
+    "paidPrice": "900.0",
+    "currency": "TRY",
+    "installment": "1",
+    "basketId": "69846e5b7a2ae42df483f8e5",
+    "paymentChannel": "WEB",
+    "ip": "::1",
+    "paymentCard": {
+      "cardHolderName": "TEST KULLANICI",
+      "cardNumber": "5528790000000008",
+      "expireMonth": "12",
+      "expireYear": "2030",
+      "cvc": "123",
+      "registerCard": 0
+    },
+    "buyer": {
+      "id": "6938309ed20f28ea140bdb75",
+      "name": "Admin",
+      "surname": "Butik",
+      "gsmNumber": "+505555555",
+      "email": "admin@dipolbutik.com",
+      "identityNumber": "10000000146",
+      "registrationAddress": "dsakndmlka",
+      "city": "izmir",
+      "country": "Türkiye",
+      "zipCode": "35500",
+      "ip": "::1"
+    },
+    "shippingAddress": {
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye",
+      "address": "dsakndmlka",
+      "zipCode": "35500"
+    },
+    "billingAddress": {
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye",
+      "address": "dsakndmlka",
+      "zipCode": "35500"
+    },
+    "basketItems": [
+      {
+        "id": "6981fcb5218a8a424bd97575_0",
+        "name": "4’lü Modern Silindir Set",
+        "category1": "Giyim",
+        "itemType": "PHYSICAL",
+        "price": "800.0"
+      },
+      {
+        "id": "SHIPPING_FEE",
+        "name": "Kargo Ücreti",
+        "category1": "Lojistik",
+        "itemType": "VIRTUAL",
+        "price": "100.0"
+      }
+    ],
+    "callbackUrl": "http://localhost:3002/api/payment/callback"
+  }
+}
+
+--- Manual Request Result [2026-02-05T10:18:04.791Z] ---
+{
+  "status": "failure",
+  "errorCode": "1001",
+  "errorMessage": "api bilgileri bulunamadı",
+  "locale": "tr",
+  "systemTime": 1770286684807,
+  "conversationId": "69846e5b7a2ae42df483f8e5"
+}
+
+--- Manual Request Start [2026-02-05T10:19:01.135Z] ---
+{
+  "url": "https://sandbox-api.iyzipay.com/payment/3dsecure/initialize",
+  "endpointPath": "/payment/3dsecure/initialize",
+  "apiKeyPrefix": "m31l***",
+  "headers": {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "x-iyzi-rnd": "1wl9j9tt",
+    "x-iyzi-client-version": "iyzipay-node-manual-1.0.1",
+    "Authorization": "IYZWSv2 YXBpS2V...",
+    "Authorization_Fallback": "IYZWS m31lBTyOx..."
+  },
+  "body": {
+    "locale": "tr",
+    "conversationId": "69846e947a2ae42df483f903",
+    "price": "900.0",
+    "paidPrice": "900.0",
+    "currency": "TRY",
+    "installment": "1",
+    "basketId": "69846e947a2ae42df483f903",
+    "paymentChannel": "WEB",
+    "ip": "::1",
+    "paymentCard": {
+      "cardHolderName": "TEST KULLANICI",
+      "cardNumber": "5528790000000008",
+      "expireMonth": "12",
+      "expireYear": "2030",
+      "cvc": "123",
+      "registerCard": 0
+    },
+    "buyer": {
+      "id": "6938309ed20f28ea140bdb75",
+      "name": "Admin",
+      "surname": "Butik",
+      "gsmNumber": "+55555555",
+      "email": "admin@dipolbutik.com",
+      "identityNumber": "10000000146",
+      "registrationAddress": "izmir",
+      "city": "izmir",
+      "country": "Türkiye",
+      "zipCode": "35500",
+      "ip": "::1"
+    },
+    "shippingAddress": {
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye",
+      "address": "izmir",
+      "zipCode": "35500"
+    },
+    "billingAddress": {
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye",
+      "address": "izmir",
+      "zipCode": "35500"
+    },
+    "basketItems": [
+      {
+        "id": "6981fcb5218a8a424bd97575_0",
+        "name": "4’lü Modern Silindir Set",
+        "category1": "Giyim",
+        "itemType": "PHYSICAL",
+        "price": "800.0"
+      },
+      {
+        "id": "SHIPPING_FEE",
+        "name": "Kargo Ücreti",
+        "category1": "Lojistik",
+        "itemType": "VIRTUAL",
+        "price": "100.0"
+      }
+    ],
+    "callbackUrl": "http://localhost:3002/api/payment/callback"
+  }
+}
+
+--- Manual Request Result [2026-02-05T10:19:01.190Z] ---
+{
+  "status": "failure",
+  "errorCode": "1001",
+  "errorMessage": "api bilgileri bulunamadı",
+  "locale": "tr",
+  "systemTime": 1770286741208,
+  "conversationId": "69846e947a2ae42df483f903"
+}
+
+--- Manual Request StartV2_Final [2026-02-05T10:20:31.431Z] ---
+{
+  "url": "https://sandbox-api.iyzipay.com/payment/3dsecure/initialize",
+  "apiKeyPrefix": "m31l...",
+  "headers": {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "x-iyzi-rnd": "18147991660813",
+    "x-iyzi-client-version": "iyzipay-node-manual-1.0.2",
+    "Authorization": "IYZWSv2 YXBpS2V5Om0z..."
+  },
+  "body": {
+    "locale": "tr",
+    "conversationId": "69846eee7a2ae42df483f90a",
+    "price": "900.0",
+    "paidPrice": "900.0",
+    "currency": "TRY",
+    "installment": "1",
+    "basketId": "69846eee7a2ae42df483f90a",
+    "paymentChannel": "WEB",
+    "ip": "127.0.0.1",
+    "paymentCard": {
+      "cardHolderName": "TEST KULLANICI",
+      "cardNumber": "5528790000000008",
+      "expireMonth": "12",
+      "expireYear": "2030",
+      "cvc": "123",
+      "registerCard": 0
+    },
+    "buyer": {
+      "id": "6938309ed20f28ea140bdb75",
+      "name": "Admin",
+      "surname": "Butik",
+      "gsmNumber": "+55555555",
+      "email": "admin@dipolbutik.com",
+      "identityNumber": "10000000146",
+      "registrationAddress": "izmir",
+      "city": "izmir",
+      "country": "Türkiye",
+      "zipCode": "35500",
+      "ip": "127.0.0.1"
+    },
+    "shippingAddress": {
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye",
+      "address": "izmir",
+      "zipCode": "35500"
+    },
+    "billingAddress": {
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye",
+      "address": "izmir",
+      "zipCode": "35500"
+    },
+    "basketItems": [
+      {
+        "id": "6981fcb5218a8a424bd97575_0",
+        "name": "4’lü Modern Silindir Set",
+        "category1": "Giyim",
+        "itemType": "PHYSICAL",
+        "price": "800.0"
+      },
+      {
+        "id": "SHIPPING_FEE",
+        "name": "Kargo Ücreti",
+        "category1": "Lojistik",
+        "itemType": "VIRTUAL",
+        "price": "100.0"
+      }
+    ],
+    "callbackUrl": "http://localhost:3002/api/payment/callback"
+  }
+}
+
+--- Manual Request Result [2026-02-05T10:20:31.725Z] ---
+{
+  "status": "failure",
+  "errorCode": "1001",
+  "errorMessage": "api bilgileri bulunamadı",
+  "locale": "tr",
+  "systemTime": 1770286831746,
+  "conversationId": "69846eee7a2ae42df483f90a"
+}
+
+--- Manual Request StartV2_Final [2026-02-05T10:20:36.968Z] ---
+{
+  "url": "https://sandbox-api.iyzipay.com/payment/3dsecure/initialize",
+  "apiKeyPrefix": "m31l...",
+  "headers": {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "x-iyzi-rnd": "18148047052702",
+    "x-iyzi-client-version": "iyzipay-node-manual-1.0.2",
+    "Authorization": "IYZWSv2 YXBpS2V5Om0z..."
+  },
+  "body": {
+    "locale": "tr",
+    "conversationId": "69846ef47a2ae42df483f911",
+    "price": "900.0",
+    "paidPrice": "900.0",
+    "currency": "TRY",
+    "installment": "1",
+    "basketId": "69846ef47a2ae42df483f911",
+    "paymentChannel": "WEB",
+    "ip": "127.0.0.1",
+    "paymentCard": {
+      "cardHolderName": "TEST KULLANICI",
+      "cardNumber": "5528790000000008",
+      "expireMonth": "12",
+      "expireYear": "2030",
+      "cvc": "123",
+      "registerCard": 0
+    },
+    "buyer": {
+      "id": "6938309ed20f28ea140bdb75",
+      "name": "Admin",
+      "surname": "Butik",
+      "gsmNumber": "+55555555",
+      "email": "admin@dipolbutik.com",
+      "identityNumber": "10000000146",
+      "registrationAddress": "izmir",
+      "city": "izmir",
+      "country": "Türkiye",
+      "zipCode": "35500",
+      "ip": "127.0.0.1"
+    },
+    "shippingAddress": {
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye",
+      "address": "izmir",
+      "zipCode": "35500"
+    },
+    "billingAddress": {
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye",
+      "address": "izmir",
+      "zipCode": "35500"
+    },
+    "basketItems": [
+      {
+        "id": "6981fcb5218a8a424bd97575_0",
+        "name": "4’lü Modern Silindir Set",
+        "category1": "Giyim",
+        "itemType": "PHYSICAL",
+        "price": "800.0"
+      },
+      {
+        "id": "SHIPPING_FEE",
+        "name": "Kargo Ücreti",
+        "category1": "Lojistik",
+        "itemType": "VIRTUAL",
+        "price": "100.0"
+      }
+    ],
+    "callbackUrl": "http://localhost:3002/api/payment/callback"
+  }
+}
+
+--- Manual Request Result [2026-02-05T10:20:37.007Z] ---
+{
+  "status": "failure",
+  "errorCode": "1001",
+  "errorMessage": "api bilgileri bulunamadı",
+  "locale": "tr",
+  "systemTime": 1770286837027,
+  "conversationId": "69846ef47a2ae42df483f911"
+}
+
+--- Filtered Request Start [2026-02-05T10:27:11.060Z] ---
+{
+  "url": "https://sandbox-api.iyzipay.com/payment/3dsecure/initialize",
+  "apiKey": "m31l...",
+  "body": {
+    "locale": "tr",
+    "conversationId": "6984707e7a2ae42df483f918",
+    "price": "900.0",
+    "paidPrice": "900.0",
+    "installment": "1",
+    "paymentChannel": "WEB",
+    "basketId": "6984707e7a2ae42df483f918",
+    "paymentCard": {
+      "cardHolderName": "TEST KULLANICI",
+      "cardNumber": "5528790000000008",
+      "expireYear": "2030",
+      "expireMonth": "12",
+      "cvc": "123",
+      "registerCard": 0
+    },
+    "buyer": {
+      "id": "6938309ed20f28ea140bdb75",
+      "name": "Admin",
+      "surname": "Butik",
+      "identityNumber": "10000000146",
+      "email": "admin@dipolbutik.com",
+      "gsmNumber": "+55555555",
+      "registrationAddress": "izmir",
+      "city": "izmir",
+      "country": "Türkiye",
+      "zipCode": "35500",
+      "ip": "127.0.0.1"
+    },
+    "shippingAddress": {
+      "address": "izmir",
+      "zipCode": "35500",
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye"
+    },
+    "billingAddress": {
+      "address": "izmir",
+      "zipCode": "35500",
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye"
+    },
+    "basketItems": [
+      {
+        "id": "6981fcb5218a8a424bd97575_0",
+        "price": "800.0",
+        "name": "4’lü Modern Silindir Set",
+        "category1": "Giyim",
+        "itemType": "PHYSICAL",
+        "subMerchantPrice": "0.0",
+        "withholdingTax": "0.0"
+      },
+      {
+        "id": "SHIPPING_FEE",
+        "price": "100.0",
+        "name": "Kargo Ücreti",
+        "category1": "Lojistik",
+        "itemType": "VIRTUAL",
+        "subMerchantPrice": "0.0",
+        "withholdingTax": "0.0"
+      }
+    ],
+    "currency": "TRY",
+    "callbackUrl": "http://localhost:3002/api/payment/callback"
+  }
+}
+
+--- Request Result [2026-02-05T10:27:11.298Z] ---
+{
+  "status": "failure",
+  "errorCode": "1001",
+  "errorMessage": "api bilgileri bulunamadı",
+  "locale": "tr",
+  "systemTime": 1770287231314,
+  "conversationId": "6984707e7a2ae42df483f918"
+}
+
+--- Filtered Request Start [2026-02-05T10:31:07.296Z] ---
+{
+  "url": "https://sandbox-api.iyzipay.com/payment/3dsecure/initialize",
+  "apiKey": "m31l...",
+  "body": {
+    "locale": "tr",
+    "conversationId": "6984716a7a2ae42df483f936",
+    "price": "900.0",
+    "paidPrice": "900.0",
+    "installment": "1",
+    "paymentChannel": "WEB",
+    "basketId": "6984716a7a2ae42df483f936",
+    "paymentCard": {
+      "cardHolderName": "TEST KULLANICI",
+      "cardNumber": "5528790000000008",
+      "expireYear": "2030",
+      "expireMonth": "12",
+      "cvc": "123",
+      "registerCard": 0
+    },
+    "buyer": {
+      "id": "6938309ed20f28ea140bdb75",
+      "name": "Admin",
+      "surname": "Butik",
+      "identityNumber": "10000000146",
+      "email": "admin@dipolbutik.com",
+      "gsmNumber": "+122222222",
+      "registrationAddress": "deneme",
+      "city": "izmir",
+      "country": "Türkiye",
+      "zipCode": "35500",
+      "ip": "127.0.0.1"
+    },
+    "shippingAddress": {
+      "address": "deneme",
+      "zipCode": "35500",
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye"
+    },
+    "billingAddress": {
+      "address": "deneme",
+      "zipCode": "35500",
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye"
+    },
+    "basketItems": [
+      {
+        "id": "6981fcb5218a8a424bd97575_0",
+        "price": "800.0",
+        "name": "4’lü Modern Silindir Set",
+        "category1": "Giyim",
+        "itemType": "PHYSICAL",
+        "subMerchantPrice": "0.0",
+        "withholdingTax": "0.0"
+      },
+      {
+        "id": "SHIPPING_FEE",
+        "price": "100.0",
+        "name": "Kargo Ücreti",
+        "category1": "Lojistik",
+        "itemType": "VIRTUAL",
+        "subMerchantPrice": "0.0",
+        "withholdingTax": "0.0"
+      }
+    ],
+    "currency": "TRY",
+    "callbackUrl": "http://localhost:3002/api/payment/callback"
+  }
+}
+
+--- Request Result [2026-02-05T10:31:07.599Z] ---
+{
+  "status": "failure",
+  "errorCode": "1001",
+  "errorMessage": "api bilgileri bulunamadı",
+  "locale": "tr",
+  "systemTime": 1770287467617,
+  "conversationId": "6984716a7a2ae42df483f936"
+}
+
+--- Filtered Request Start [2026-02-05T10:42:58.584Z] ---
+{
+  "url": "https://api.iyzipay.com/payment/3dsecure/initialize",
+  "apiKey": "m31l...",
+  "body": {
+    "locale": "tr",
+    "conversationId": "698474327a2ae42df483f93d",
+    "price": "900.0",
+    "paidPrice": "900.0",
+    "installment": "1",
+    "paymentChannel": "WEB",
+    "basketId": "698474327a2ae42df483f93d",
+    "paymentCard": {
+      "cardHolderName": "TEST KULLANICI",
+      "cardNumber": "5528790000000008",
+      "expireYear": "2030",
+      "expireMonth": "12",
+      "cvc": "123",
+      "registerCard": 0
+    },
+    "buyer": {
+      "id": "6938309ed20f28ea140bdb75",
+      "name": "Admin",
+      "surname": "Butik",
+      "identityNumber": "10000000146",
+      "email": "admin@dipolbutik.com",
+      "gsmNumber": "+122222222",
+      "registrationAddress": "deneme",
+      "city": "izmir",
+      "country": "Türkiye",
+      "zipCode": "35500",
+      "ip": "127.0.0.1"
+    },
+    "shippingAddress": {
+      "address": "deneme",
+      "zipCode": "35500",
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye"
+    },
+    "billingAddress": {
+      "address": "deneme",
+      "zipCode": "35500",
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye"
+    },
+    "basketItems": [
+      {
+        "id": "6981fcb5218a8a424bd97575_0",
+        "price": "800.0",
+        "name": "4’lü Modern Silindir Set",
+        "category1": "Giyim",
+        "itemType": "PHYSICAL",
+        "subMerchantPrice": "0.0",
+        "withholdingTax": "0.0"
+      },
+      {
+        "id": "SHIPPING_FEE",
+        "price": "100.0",
+        "name": "Kargo Ücreti",
+        "category1": "Lojistik",
+        "itemType": "VIRTUAL",
+        "subMerchantPrice": "0.0",
+        "withholdingTax": "0.0"
+      }
+    ],
+    "currency": "TRY",
+    "callbackUrl": "http://localhost:3002/api/payment/callback"
+  }
+}
+
+--- Request Result [2026-02-05T10:42:58.822Z] ---
+{
+  "status": "failure",
+  "errorCode": "5060",
+  "errorMessage": "basketItemSubMerchantKey gönderilmesi zorunludur",
+  "locale": "tr",
+  "systemTime": 1770288178834,
+  "conversationId": "698474327a2ae42df483f93d"
+}
+
+--- Filtered Request Start [2026-02-05T10:45:03.245Z] ---
+{
+  "url": "https://api.iyzipay.com/payment/3dsecure/initialize",
+  "apiKey": "m31l...",
+  "body": {
+    "locale": "tr",
+    "conversationId": "698474ae7a2ae42df483f944",
+    "price": "900.0",
+    "paidPrice": "900.0",
+    "installment": "1",
+    "paymentChannel": "WEB",
+    "basketId": "698474ae7a2ae42df483f944",
+    "paymentCard": {
+      "cardHolderName": "TEST KULLANICI",
+      "cardNumber": "5528790000000008",
+      "expireYear": "2030",
+      "expireMonth": "12",
+      "cvc": "123",
+      "registerCard": 0
+    },
+    "buyer": {
+      "id": "6938309ed20f28ea140bdb75",
+      "name": "Admin",
+      "surname": "Butik",
+      "identityNumber": "10000000146",
+      "email": "admin@dipolbutik.com",
+      "gsmNumber": "+122222222",
+      "registrationAddress": "deneme",
+      "city": "izmir",
+      "country": "Türkiye",
+      "zipCode": "35500",
+      "ip": "127.0.0.1"
+    },
+    "shippingAddress": {
+      "address": "deneme",
+      "zipCode": "35500",
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye"
+    },
+    "billingAddress": {
+      "address": "deneme",
+      "zipCode": "35500",
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye"
+    },
+    "basketItems": [
+      {
+        "id": "6981fcb5218a8a424bd97575_0",
+        "price": "800.0",
+        "name": "4’lü Modern Silindir Set",
+        "category1": "Giyim",
+        "itemType": "PHYSICAL"
+      },
+      {
+        "id": "SHIPPING_FEE",
+        "price": "100.0",
+        "name": "Kargo Ücreti",
+        "category1": "Lojistik",
+        "itemType": "VIRTUAL"
+      }
+    ],
+    "currency": "TRY",
+    "callbackUrl": "http://localhost:3002/api/payment/callback"
+  }
+}
+
+--- Request Result [2026-02-05T10:45:04.397Z] ---
+{
+  "status": "success",
+  "locale": "tr",
+  "systemTime": 1770288304415,
+  "conversationId": "698474ae7a2ae42df483f944",
+  "threeDSHtmlContent": "PCFET0NUWVBFIGh0bWwgUFVCTElDICItLy9XM0MvL0RURCBIVE1MIDQuMDEgVHJhbnNpdGlvbmFsLy9FTiI+CjwhLS0gZ2F0ZXJlc3VsdG5vbG9nby5odG0gLS0+CjxodG1sPgogPGhlYWQ+CiAgPG1ldGEgaHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNoYXJzZXQ9VVRGLTgiPgogIDxzY3JpcHQgdHlwZT0idGV4dC9qYXZhc2NyaXB0IiBsYW5ndWFnZT0iamF2YXNjcmlwdCIgbm9uY2U9IkY1Mmd0eXVOMUwzOTZMK1oxaW4rRm1sdVVnUWRnVEM3NzhEWENPWVE1N0U9Ij4NCgkJd2luZG93Lm9ubG9hZCA9IGZ1bmN0aW9uKCkgew0KCQkJZG9jdW1lbnQucmV0dXJuZm9ybS5zdWJtaXQoKTsNCgkJfQ0KCTwvc2NyaXB0PgogPC9oZWFkPgogPGJvZHk+CiAgPGZvcm0gYWN0aW9uPSJodHRwczovL2FwaS5peXppcGF5LmNvbS9wYXltZW50L2l5emlwb3MvY2FsbGJhY2szZHMvZmFpbHVyZS8xNjEiIG1ldGhvZD0icG9zdCIgbmFtZT0icmV0dXJuZm9ybSI+CiAgIDxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9Im9pZCIgdmFsdWU9IjIwMjYwMjA1MTM0NTAzMDY0Z1pBR3cwSCI+PGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0iY2F2diIgdmFsdWU9IiI+IDxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9IlJlc3BvbnNlIiB2YWx1ZT0iRGVjbGluZWQiPiA8aW5wdXQgdHlwZT0iaGlkZGVuIiBuYW1lPSJoYXNoQWxnb3JpdGhtIiB2YWx1ZT0idmVyMyI+IDxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9ImVuY29kaW5nIiB2YWx1ZT0iVVRGLTgiPiA8aW5wdXQgdHlwZT0iaGlkZGVuIiBuYW1lPSJQcm9jUmV0dXJuQ29kZSIgdmFsdWU9Ijk5Ij4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0iRWNvbV9QYXltZW50X0NhcmRfRXhwRGF0ZV9Nb250aCIgdmFsdWU9IjEyIj4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0iY3VycmVuY3kiIHZhbHVlPSI5NDkiPiA8aW5wdXQgdHlwZT0iaGlkZGVuIiBuYW1lPSJ1cmwiIHZhbHVlPSJodHRwczovL3Nwb3MuaXNiYW5rLmNvbS50ci9maW0vZXN0M0RnYXRlIj4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0iY2FsbGJhY2tDYWxsIiB2YWx1ZT0idHJ1ZSI+IDxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9ImFtb3VudCIgdmFsdWU9IjkwMC4wMCI+IDxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9ImVjaSIgdmFsdWU9IjAwIj4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0ibWFza2VkQ3JlZGl0Q2FyZCIgdmFsdWU9IjU1MjggNzkqKiAqKioqIDAwMDgiPiA8aW5wdXQgdHlwZT0iaGlkZGVuIiBuYW1lPSJtZXJjaGFudERhdGEiIHZhbHVlPSI1NTI4Nzk6NDcwQTlGMjJEQzIzREFFNDZENzlBOURFOEVFNjg1Nzk0QkZFMEEwREExNTRBN0JBMzgxRUQ4MjEyRUQ1MDg4QTozOTEyOiMjNzAwNjY3MTYzNTM5Ij4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0ic3N0UmVzcG9uc2UiIHZhbHVlPSIyOkNBUkRIT0xERVJfTk9UX0ZPVU5EIj4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0iRWNvbV9QYXltZW50X0NhcmRfRXhwRGF0ZV9ZZWFyIiB2YWx1ZT0iMjAzMCI+IDxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9IlNoaXBUb1N0YXRlUHJvdiIgdmFsdWU9IiI+IDxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9InN0b3JldHlwZSIgdmFsdWU9IjNkIj4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0ibWRTdGF0dXMiIHZhbHVlPSIwIj4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0iZmFpbFVybCIgdmFsdWU9Imh0dHBzOi8vYXBpLml5emlwYXkuY29tL3BheW1lbnQvaXl6aXBvcy9jYWxsYmFjazNkcy9mYWlsdXJlLzE2MSI+IDxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9ImNsaWVudElwIiB2YWx1ZT0iMjEzLjIyNi4xMTguMTciPiA8aW5wdXQgdHlwZT0iaGlkZGVuIiBuYW1lPSJFcnJNc2ciIHZhbHVlPSIyOkNBUkRIT0xERVJfTk9UX0ZPVU5EIj4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0ibWRFcnJvck1zZyIgdmFsdWU9IjI6Q0FSREhPTERFUl9OT1RfRk9VTkQiPiA8aW5wdXQgdHlwZT0iaGlkZGVuIiBuYW1lPSJTVUJNRVJDSEFOVE5BTUUiIHZhbHVlPSJkaXBvbGJ1dGlrLmNvbSI+IDxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9ImNsaWVudGlkIiB2YWx1ZT0iNzAwNjY3MTYzNTM5Ij4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0iTWFza2VkUGFuIiB2YWx1ZT0iNTUyODc5KioqMDAwOCI+IDxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9Im9rVXJsIiB2YWx1ZT0iaHR0cHM6Ly9hcGkuaXl6aXBheS5jb20vcGF5bWVudC9peXppcG9zL2NhbGxiYWNrM2RzL3N1Y2Nlc3MvMTYxIj4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0iQmlsbFRvU3RhdGVQcm92IiB2YWx1ZT0iIj4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0ibWQiIHZhbHVlPSI1NTI4Nzk6NDcwQTlGMjJEQzIzREFFNDZENzlBOURFOEVFNjg1Nzk0QkZFMEEwREExNTRBN0JBMzgxRUQ4MjEyRUQ1MDg4QTozOTEyOiMjNzAwNjY3MTYzNTM5Ij4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0ibGFuZyIgdmFsdWU9InRyIj4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0ieGlkIiB2YWx1ZT0ib1ZqdGQvd29SbHJBOTJmLzM5Q0lZbktPUTNBPSI+IDxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9IkhBU0giIHZhbHVlPSJJVjJnK0pldXpFV0ZabnZhNlNLU2RBVFFEODZNdWRDYXVHZm9CRGlmWnoyWEgrQnN2TXltWGlWcVlFdnFxYUttQ3BzVnhHNjR4R1JXdHFpczJGV0ExQT09Ij4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0icm5kIiB2YWx1ZT0iZDdPRVF1OHIvQTRjQzBtdDJpeHIiPiA8IS0tIFRvIHN1cHBvcnQgamF2YXNjcmlwdCB1bmF3YXJlL2Rpc2FibGVkIGJyb3dzZXJzIC0tPgogICA8bm9zY3JpcHQ+CiAgICA8Y2VudGVyPgogICAgIERldmFtIGV0bWVrIGljaW4gdGlrbGF5aW5pei4KICAgICA8YnI+CiAgICAgUGxlYXNlIENsaWNrIHRvIGNvbnRpbnVlLgogICAgIDxicj4KICAgICA8aW5wdXQgdHlwZT0ic3VibWl0IiBuYW1lPSJzdWJtaXQiIHZhbHVlPSJTdWJtaXQiIGlkPSJidG5TYm10Ij4KICAgIDwvY2VudGVyPgogICA8L25vc2NyaXB0PgogIDwvZm9ybT4KIDwvYm9keT4KPC9odG1sPg==",
+  "paymentId": "3892168204",
+  "signature": "8d579a4ddf7bbdf677892ff80757f2412539afec70880ea11ab0a2e88fa78b2f"
+}
+
+--- Filtered Request Start [2026-02-05T10:45:13.766Z] ---
+{
+  "url": "https://api.iyzipay.com/payment/3dsecure/initialize",
+  "apiKey": "m31l...",
+  "body": {
+    "locale": "tr",
+    "conversationId": "698474b97a2ae42df483f949",
+    "price": "900.0",
+    "paidPrice": "900.0",
+    "installment": "1",
+    "paymentChannel": "WEB",
+    "basketId": "698474b97a2ae42df483f949",
+    "paymentCard": {
+      "cardHolderName": "TEST KULLANICI",
+      "cardNumber": "5528790000000008",
+      "expireYear": "2030",
+      "expireMonth": "12",
+      "cvc": "123",
+      "registerCard": 0
+    },
+    "buyer": {
+      "id": "6938309ed20f28ea140bdb75",
+      "name": "Admin",
+      "surname": "Butik",
+      "identityNumber": "10000000146",
+      "email": "admin@dipolbutik.com",
+      "gsmNumber": "+122222222",
+      "registrationAddress": "deneme",
+      "city": "izmir",
+      "country": "Türkiye",
+      "zipCode": "35500",
+      "ip": "127.0.0.1"
+    },
+    "shippingAddress": {
+      "address": "deneme",
+      "zipCode": "35500",
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye"
+    },
+    "billingAddress": {
+      "address": "deneme",
+      "zipCode": "35500",
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye"
+    },
+    "basketItems": [
+      {
+        "id": "6981fcb5218a8a424bd97575_0",
+        "price": "800.0",
+        "name": "4’lü Modern Silindir Set",
+        "category1": "Giyim",
+        "itemType": "PHYSICAL"
+      },
+      {
+        "id": "SHIPPING_FEE",
+        "price": "100.0",
+        "name": "Kargo Ücreti",
+        "category1": "Lojistik",
+        "itemType": "VIRTUAL"
+      }
+    ],
+    "currency": "TRY",
+    "callbackUrl": "http://localhost:3002/api/payment/callback"
+  }
+}
+
+--- Request Result [2026-02-05T10:45:14.675Z] ---
+{
+  "status": "success",
+  "locale": "tr",
+  "systemTime": 1770288314693,
+  "conversationId": "698474b97a2ae42df483f949",
+  "threeDSHtmlContent": "PCFET0NUWVBFIGh0bWwgUFVCTElDICItLy9XM0MvL0RURCBIVE1MIDQuMDEgVHJhbnNpdGlvbmFsLy9FTiI+CjwhLS0gZ2F0ZXJlc3VsdG5vbG9nby5odG0gLS0+CjxodG1sPgogPGhlYWQ+CiAgPG1ldGEgaHR0cC1lcXVpdj0iQ29udGVudC1UeXBlIiBjb250ZW50PSJ0ZXh0L2h0bWw7IGNoYXJzZXQ9VVRGLTgiPgogIDxzY3JpcHQgdHlwZT0idGV4dC9qYXZhc2NyaXB0IiBsYW5ndWFnZT0iamF2YXNjcmlwdCIgbm9uY2U9IjUxYk1QQnBYVE1rbERXditFaE01a0VVbVl5cGZlKzdaL2hqQ002WHFoYWM9Ij4NCgkJd2luZG93Lm9ubG9hZCA9IGZ1bmN0aW9uKCkgew0KCQkJZG9jdW1lbnQucmV0dXJuZm9ybS5zdWJtaXQoKTsNCgkJfQ0KCTwvc2NyaXB0PgogPC9oZWFkPgogPGJvZHk+CiAgPGZvcm0gYWN0aW9uPSJodHRwczovL2FwaS5peXppcGF5LmNvbS9wYXltZW50L2l5emlwb3MvY2FsbGJhY2szZHMvZmFpbHVyZS8xNjEiIG1ldGhvZD0icG9zdCIgbmFtZT0icmV0dXJuZm9ybSI+CiAgIDxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9Im9pZCIgdmFsdWU9IjIwMjYwMjA1MTM0NTEzMDY0NEhpNUdDYyI+PGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0iY2F2diIgdmFsdWU9IiI+IDxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9IlJlc3BvbnNlIiB2YWx1ZT0iRGVjbGluZWQiPiA8aW5wdXQgdHlwZT0iaGlkZGVuIiBuYW1lPSJoYXNoQWxnb3JpdGhtIiB2YWx1ZT0idmVyMyI+IDxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9ImVuY29kaW5nIiB2YWx1ZT0iVVRGLTgiPiA8aW5wdXQgdHlwZT0iaGlkZGVuIiBuYW1lPSJQcm9jUmV0dXJuQ29kZSIgdmFsdWU9Ijk5Ij4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0iRWNvbV9QYXltZW50X0NhcmRfRXhwRGF0ZV9Nb250aCIgdmFsdWU9IjEyIj4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0iY3VycmVuY3kiIHZhbHVlPSI5NDkiPiA8aW5wdXQgdHlwZT0iaGlkZGVuIiBuYW1lPSJ1cmwiIHZhbHVlPSJodHRwczovL3Nwb3MuaXNiYW5rLmNvbS50ci9maW0vZXN0M0RnYXRlIj4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0iY2FsbGJhY2tDYWxsIiB2YWx1ZT0idHJ1ZSI+IDxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9ImFtb3VudCIgdmFsdWU9IjkwMC4wMCI+IDxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9ImVjaSIgdmFsdWU9IjAwIj4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0ibWFza2VkQ3JlZGl0Q2FyZCIgdmFsdWU9IjU1MjggNzkqKiAqKioqIDAwMDgiPiA8aW5wdXQgdHlwZT0iaGlkZGVuIiBuYW1lPSJtZXJjaGFudERhdGEiIHZhbHVlPSI1NTI4Nzk6OTFDNEM3QUI4NzE1NTdBQUMwMDI0NkFBQTRBNEJERjdERDI4OTU0M0I3QjdDQ0Q5QzhBMTIyQUQxQzE0MUZGRjo0NDg4OiMjNzAwNjY3MTYzNTM5Ij4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0ic3N0UmVzcG9uc2UiIHZhbHVlPSIyOkNBUkRIT0xERVJfTk9UX0ZPVU5EIj4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0iRWNvbV9QYXltZW50X0NhcmRfRXhwRGF0ZV9ZZWFyIiB2YWx1ZT0iMjAzMCI+IDxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9IlNoaXBUb1N0YXRlUHJvdiIgdmFsdWU9IiI+IDxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9InN0b3JldHlwZSIgdmFsdWU9IjNkIj4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0ibWRTdGF0dXMiIHZhbHVlPSIwIj4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0iZmFpbFVybCIgdmFsdWU9Imh0dHBzOi8vYXBpLml5emlwYXkuY29tL3BheW1lbnQvaXl6aXBvcy9jYWxsYmFjazNkcy9mYWlsdXJlLzE2MSI+IDxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9ImNsaWVudElwIiB2YWx1ZT0iMjEzLjIyNi4xMTguMTciPiA8aW5wdXQgdHlwZT0iaGlkZGVuIiBuYW1lPSJFcnJNc2ciIHZhbHVlPSIyOkNBUkRIT0xERVJfTk9UX0ZPVU5EIj4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0ibWRFcnJvck1zZyIgdmFsdWU9IjI6Q0FSREhPTERFUl9OT1RfRk9VTkQiPiA8aW5wdXQgdHlwZT0iaGlkZGVuIiBuYW1lPSJTVUJNRVJDSEFOVE5BTUUiIHZhbHVlPSJkaXBvbGJ1dGlrLmNvbSI+IDxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9ImNsaWVudGlkIiB2YWx1ZT0iNzAwNjY3MTYzNTM5Ij4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0iTWFza2VkUGFuIiB2YWx1ZT0iNTUyODc5KioqMDAwOCI+IDxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9Im9rVXJsIiB2YWx1ZT0iaHR0cHM6Ly9hcGkuaXl6aXBheS5jb20vcGF5bWVudC9peXppcG9zL2NhbGxiYWNrM2RzL3N1Y2Nlc3MvMTYxIj4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0iQmlsbFRvU3RhdGVQcm92IiB2YWx1ZT0iIj4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0ibWQiIHZhbHVlPSI1NTI4Nzk6OTFDNEM3QUI4NzE1NTdBQUMwMDI0NkFBQTRBNEJERjdERDI4OTU0M0I3QjdDQ0Q5QzhBMTIyQUQxQzE0MUZGRjo0NDg4OiMjNzAwNjY3MTYzNTM5Ij4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0ibGFuZyIgdmFsdWU9InRyIj4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0ieGlkIiB2YWx1ZT0iOXYwQ0dWVDZDZ1hGcElBRG1SOXZ6WDRqU0c0PSI+IDxpbnB1dCB0eXBlPSJoaWRkZW4iIG5hbWU9IkhBU0giIHZhbHVlPSJMU2JzcTBYd0kvaS93dlFVZ1l5d25QSExyM3daUlhwUytZS1gwRllPUGthOTNOTWp1UFFyczhiSlhVTDM4YjhDd0VOSEliUE85OEVxejNZbFpwbHNVdz09Ij4gPGlucHV0IHR5cGU9ImhpZGRlbiIgbmFtZT0icm5kIiB2YWx1ZT0idWtYZURVd3NoTjZjZzJRWDNDcHEiPiA8IS0tIFRvIHN1cHBvcnQgamF2YXNjcmlwdCB1bmF3YXJlL2Rpc2FibGVkIGJyb3dzZXJzIC0tPgogICA8bm9zY3JpcHQ+CiAgICA8Y2VudGVyPgogICAgIERldmFtIGV0bWVrIGljaW4gdGlrbGF5aW5pei4KICAgICA8YnI+CiAgICAgUGxlYXNlIENsaWNrIHRvIGNvbnRpbnVlLgogICAgIDxicj4KICAgICA8aW5wdXQgdHlwZT0ic3VibWl0IiBuYW1lPSJzdWJtaXQiIHZhbHVlPSJTdWJtaXQiIGlkPSJidG5TYm10Ij4KICAgIDwvY2VudGVyPgogICA8L25vc2NyaXB0PgogIDwvZm9ybT4KIDwvYm9keT4KPC9odG1sPg==",
+  "paymentId": "3892168389",
+  "signature": "f640e4b6f744bc4c10f0bfe86f0982981d1b55cb67f96cd630cd6f1bf9fc3793"
+}
+
+--- Filtered Request Start [2026-02-05T10:47:16.040Z] ---
+{
+  "url": "https://api.iyzipay.com/payment/3dsecure/initialize",
+  "apiKey": "m31l...",
+  "body": {
+    "locale": "tr",
+    "conversationId": "698475337a2ae42df483f94e",
+    "price": "900.0",
+    "paidPrice": "900.0",
+    "installment": "1",
+    "paymentChannel": "WEB",
+    "basketId": "698475337a2ae42df483f94e",
+    "paymentCard": {
+      "cardHolderName": "TEST KULLANICI",
+      "cardNumber": "5528790000000008",
+      "expireYear": "2030",
+      "expireMonth": "12",
+      "cvc": "123",
+      "registerCard": 0
+    },
+    "buyer": {
+      "id": "6938309ed20f28ea140bdb75",
+      "name": "Admin",
+      "surname": "Butik",
+      "identityNumber": "10000000146",
+      "email": "admin@dipolbutik.com",
+      "gsmNumber": "+122222222",
+      "registrationAddress": "deneme",
+      "city": "izmir",
+      "country": "Türkiye",
+      "zipCode": "35500",
+      "ip": "127.0.0.1"
+    },
+    "shippingAddress": {
+      "address": "deneme",
+      "zipCode": "35500",
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye"
+    },
+    "billingAddress": {
+      "address": "deneme",
+      "zipCode": "35500",
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye"
+    },
+    "basketItems": [
+      {
+        "id": "6981fcb5218a8a424bd97575_0",
+        "price": "800.0",
+        "name": "4’lü Modern Silindir Set",
+        "category1": "Giyim",
+        "itemType": "PHYSICAL"
+      },
+      {
+        "id": "SHIPPING_FEE",
+        "price": "100.0",
+        "name": "Kargo Ücreti",
+        "category1": "Lojistik",
+        "itemType": "VIRTUAL"
+      }
+    ],
+    "currency": "TRY",
+    "callbackUrl": "http://localhost:3002/api/payment/callback"
+  }
+}
+
+--- Request Result [2026-02-05T10:47:17.139Z] ---
+{
+  "status": "success",
+  "locale": "tr",
+  "systemTime": 1770288437142,
+  "conversationId": "698475337a2ae42df483f94e",
+  "threeDSHtmlContent": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n<!-- gateresultnologo.htm -->\n<html>\n <head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n  <script type=\"text/javascript\" language=\"javascript\" nonce=\"zlp/uq4osYQ523nqo2lfd4Xpb0nzS8Ab/eAzFzIvj0c=\">\r\n\t\twindow.onload = function() {\r\n\t\t\tdocument.returnform.submit();\r\n\t\t}\r\n\t</script>\n </head>\n <body>\n  <form action=\"https://api.iyzipay.com/payment/iyzipos/callback3ds/failure/161\" method=\"post\" name=\"returnform\">\n   <input type=\"hidden\" name=\"oid\" value=\"20260205134716064gZLLYdI\"><input type=\"hidden\" name=\"cavv\" value=\"\"> <input type=\"hidden\" name=\"Response\" value=\"Declined\"> <input type=\"hidden\" name=\"hashAlgorithm\" value=\"ver3\"> <input type=\"hidden\" name=\"encoding\" value=\"UTF-8\"> <input type=\"hidden\" name=\"ProcReturnCode\" value=\"99\"> <input type=\"hidden\" name=\"Ecom_Payment_Card_ExpDate_Month\" value=\"12\"> <input type=\"hidden\" name=\"currency\" value=\"949\"> <input type=\"hidden\" name=\"url\" value=\"https://spos.isbank.com.tr/fim/est3Dgate\"> <input type=\"hidden\" name=\"callbackCall\" value=\"true\"> <input type=\"hidden\" name=\"amount\" value=\"900.00\"> <input type=\"hidden\" name=\"eci\" value=\"00\"> <input type=\"hidden\" name=\"maskedCreditCard\" value=\"5528 79** **** 0008\"> <input type=\"hidden\" name=\"merchantData\" value=\"552879:085B3FC470DAE3F06259C8E813EC484D27CF76F29611C9B3F05C51147EBDAC42:4317:##700667163539\"> <input type=\"hidden\" name=\"sstResponse\" value=\"2:CARDHOLDER_NOT_FOUND\"> <input type=\"hidden\" name=\"Ecom_Payment_Card_ExpDate_Year\" value=\"2030\"> <input type=\"hidden\" name=\"ShipToStateProv\" value=\"\"> <input type=\"hidden\" name=\"storetype\" value=\"3d\"> <input type=\"hidden\" name=\"mdStatus\" value=\"0\"> <input type=\"hidden\" name=\"failUrl\" value=\"https://api.iyzipay.com/payment/iyzipos/callback3ds/failure/161\"> <input type=\"hidden\" name=\"clientIp\" value=\"213.226.118.17\"> <input type=\"hidden\" name=\"ErrMsg\" value=\"2:CARDHOLDER_NOT_FOUND\"> <input type=\"hidden\" name=\"mdErrorMsg\" value=\"2:CARDHOLDER_NOT_FOUND\"> <input type=\"hidden\" name=\"SUBMERCHANTNAME\" value=\"dipolbutik.com\"> <input type=\"hidden\" name=\"clientid\" value=\"700667163539\"> <input type=\"hidden\" name=\"MaskedPan\" value=\"552879***0008\"> <input type=\"hidden\" name=\"okUrl\" value=\"https://api.iyzipay.com/payment/iyzipos/callback3ds/success/161\"> <input type=\"hidden\" name=\"BillToStateProv\" value=\"\"> <input type=\"hidden\" name=\"md\" value=\"552879:085B3FC470DAE3F06259C8E813EC484D27CF76F29611C9B3F05C51147EBDAC42:4317:##700667163539\"> <input type=\"hidden\" name=\"lang\" value=\"tr\"> <input type=\"hidden\" name=\"xid\" value=\"fd+qaWr8mySABZsi4CI+sBRGUO4=\"> <input type=\"hidden\" name=\"HASH\" value=\"UETnLrCNXAJqjtjQrxtigPTtsjVF+9WUhsqR+mG3DK2HC5WWRUNEdFeXDcDoa3PUiAvSBWpFP+A9eLYMfIXDzA==\"> <input type=\"hidden\" name=\"rnd\" value=\"NaBsUuVRi9UA7r/eHozn\"> <!-- To support javascript unaware/disabled browsers -->\n   <noscript>\n    <center>\n     Devam etmek icin tiklayiniz.\n     <br>\n     Please Click to continue.\n     <br>\n     <input type=\"submit\" name=\"submit\" value=\"Submit\" id=\"btnSbmt\">\n    </center>\n   </noscript>\n  </form>\n </body>\n</html>",
+  "paymentId": "3892170618",
+  "signature": "cecb4f610698f14c6722698254d28bd6779e71d3ba28375f5bf18f722631f8d5"
+}
+
+--- Filtered Request Start [2026-02-05T10:49:46.182Z] ---
+{
+  "url": "https://api.iyzipay.com/payment/3dsecure/initialize",
+  "apiKey": "m31l...",
+  "body": {
+    "locale": "tr",
+    "conversationId": "698475c97a2ae42df483f9aa",
+    "price": "900.0",
+    "paidPrice": "900.0",
+    "installment": "1",
+    "paymentChannel": "WEB",
+    "basketId": "698475c97a2ae42df483f9aa",
+    "paymentCard": {
+      "cardHolderName": "TEST KULLANICI",
+      "cardNumber": "5528790000000008",
+      "expireYear": "2030",
+      "expireMonth": "12",
+      "cvc": "123",
+      "registerCard": 0
+    },
+    "buyer": {
+      "id": "6938309ed20f28ea140bdb75",
+      "name": "Admin",
+      "surname": "Butik",
+      "identityNumber": "10000000146",
+      "email": "admin@dipolbutik.com",
+      "gsmNumber": "+505555555",
+      "registrationAddress": "dsadas",
+      "city": "izmir",
+      "country": "Türkiye",
+      "zipCode": "35500",
+      "ip": "127.0.0.1"
+    },
+    "shippingAddress": {
+      "address": "dsadas",
+      "zipCode": "35500",
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye"
+    },
+    "billingAddress": {
+      "address": "dsadas",
+      "zipCode": "35500",
+      "contactName": "Admin",
+      "city": "izmir",
+      "country": "Türkiye"
+    },
+    "basketItems": [
+      {
+        "id": "6981fcb5218a8a424bd97575_0",
+        "price": "800.0",
+        "name": "4’lü Modern Silindir Set",
+        "category1": "Giyim",
+        "itemType": "PHYSICAL"
+      },
+      {
+        "id": "SHIPPING_FEE",
+        "price": "100.0",
+        "name": "Kargo Ücreti",
+        "category1": "Lojistik",
+        "itemType": "VIRTUAL"
+      }
+    ],
+    "currency": "TRY",
+    "callbackUrl": "http://localhost:3002/api/payment/callback"
+  }
+}
+
+--- Request Result [2026-02-05T10:49:47.251Z] ---
+{
+  "status": "success",
+  "locale": "tr",
+  "systemTime": 1770288587266,
+  "conversationId": "698475c97a2ae42df483f9aa",
+  "threeDSHtmlContent": "<!DOCTYPE html PUBLIC \"-//W3C//DTD HTML 4.01 Transitional//EN\">\n<!-- gateresultnologo.htm -->\n<html>\n <head>\n  <meta http-equiv=\"Content-Type\" content=\"text/html; charset=UTF-8\">\n  <script type=\"text/javascript\" language=\"javascript\" nonce=\"3tgaKDjBjKoiyu5OvnhEuErAR+82SrU3X3DMZh+MEEY=\">\r\n\t\twindow.onload = function() {\r\n\t\t\tdocument.returnform.submit();\r\n\t\t}\r\n\t</script>\n </head>\n <body>\n  <form action=\"https://api.iyzipay.com/payment/iyzipos/callback3ds/failure/161\" method=\"post\" name=\"returnform\">\n   <input type=\"hidden\" name=\"oid\" value=\"20260205134946064yu1pVkT\"><input type=\"hidden\" name=\"cavv\" value=\"\"> <input type=\"hidden\" name=\"Response\" value=\"Declined\"> <input type=\"hidden\" name=\"hashAlgorithm\" value=\"ver3\"> <input type=\"hidden\" name=\"encoding\" value=\"UTF-8\"> <input type=\"hidden\" name=\"ProcReturnCode\" value=\"99\"> <input type=\"hidden\" name=\"Ecom_Payment_Card_ExpDate_Month\" value=\"12\"> <input type=\"hidden\" name=\"currency\" value=\"949\"> <input type=\"hidden\" name=\"url\" value=\"https://spos.isbank.com.tr/fim/est3Dgate\"> <input type=\"hidden\" name=\"callbackCall\" value=\"true\"> <input type=\"hidden\" name=\"amount\" value=\"900.00\"> <input type=\"hidden\" name=\"eci\" value=\"00\"> <input type=\"hidden\" name=\"maskedCreditCard\" value=\"5528 79** **** 0008\"> <input type=\"hidden\" name=\"merchantData\" value=\"552879:C31D4126CDE3B7B8217951786687F0ECA72D19E37BE44B1B7F230E0A112A601A:3478:##700667163539\"> <input type=\"hidden\" name=\"sstResponse\" value=\"2:CARDHOLDER_NOT_FOUND\"> <input type=\"hidden\" name=\"Ecom_Payment_Card_ExpDate_Year\" value=\"2030\"> <input type=\"hidden\" name=\"ShipToStateProv\" value=\"\"> <input type=\"hidden\" name=\"storetype\" value=\"3d\"> <input type=\"hidden\" name=\"mdStatus\" value=\"0\"> <input type=\"hidden\" name=\"failUrl\" value=\"https://api.iyzipay.com/payment/iyzipos/callback3ds/failure/161\"> <input type=\"hidden\" name=\"clientIp\" value=\"213.226.118.17\"> <input type=\"hidden\" name=\"ErrMsg\" value=\"2:CARDHOLDER_NOT_FOUND\"> <input type=\"hidden\" name=\"mdErrorMsg\" value=\"2:CARDHOLDER_NOT_FOUND\"> <input type=\"hidden\" name=\"SUBMERCHANTNAME\" value=\"dipolbutik.com\"> <input type=\"hidden\" name=\"clientid\" value=\"700667163539\"> <input type=\"hidden\" name=\"MaskedPan\" value=\"552879***0008\"> <input type=\"hidden\" name=\"okUrl\" value=\"https://api.iyzipay.com/payment/iyzipos/callback3ds/success/161\"> <input type=\"hidden\" name=\"BillToStateProv\" value=\"\"> <input type=\"hidden\" name=\"md\" value=\"552879:C31D4126CDE3B7B8217951786687F0ECA72D19E37BE44B1B7F230E0A112A601A:3478:##700667163539\"> <input type=\"hidden\" name=\"lang\" value=\"tr\"> <input type=\"hidden\" name=\"xid\" value=\"2G6jLwnNMmORd4O5S/hT3WAFE5M=\"> <input type=\"hidden\" name=\"HASH\" value=\"ANTa+Uflmnc2HCixB/DMDcM1+VXNt9QSEYTuweIYG+8PvUtBv9ERE2QLz7Sc1CTGyJfvV1qzlQdtPDxFmxtx+w==\"> <input type=\"hidden\" name=\"rnd\" value=\"q1b49fUV9e46FCHlgcUf\"> <!-- To support javascript unaware/disabled browsers -->\n   <noscript>\n    <center>\n     Devam etmek icin tiklayiniz.\n     <br>\n     Please Click to continue.\n     <br>\n     <input type=\"submit\" name=\"submit\" value=\"Submit\" id=\"btnSbmt\">\n    </center>\n   </noscript>\n  </form>\n </body>\n</html>",
+  "paymentId": "3892173707",
+  "signature": "f3dcaedc182c8249a066577dcd59d34dc44797c7c72af196dbf6895594ce2a57"
+}
