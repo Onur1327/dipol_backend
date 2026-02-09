@@ -39,6 +39,13 @@ export async function POST(request) {
       );
     }
 
+    if (!user.emailVerified) {
+      return NextResponse.json(
+        { error: 'Lütfen giriş yapmadan önce e-posta adresinizi doğrulayın.' },
+        { status: 403, headers: getCorsHeaders(request) }
+      );
+    }
+
     const isPasswordValid = await bcrypt.compare(validatedData.password, user.password);
 
     if (!isPasswordValid) {

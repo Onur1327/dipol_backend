@@ -74,15 +74,8 @@ export async function POST(request) {
       await sendEmailVerificationEmail(sanitizedEmail, emailVerificationToken);
     } catch (emailError) { }
 
-    const token = generateToken({
-      userId: user._id.toString(),
-      email: user.email,
-      role: user.role,
-    });
-
     return NextResponse.json({
       message: 'Kayıt başarılı. Lütfen e-posta adresinizi doğrulamak için e-postanızı kontrol edin.',
-      token,
       user: {
         id: user._id,
         name: user.name,
