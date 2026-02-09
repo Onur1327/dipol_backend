@@ -66,7 +66,7 @@ export async function POST(request) {
         name: product.name + (item.color ? ` (${item.color}, ${item.size})` : ''),
         category1: 'Giyim',
         itemType: 'PHYSICAL',
-        price: Number((effectivePrice * item.quantity).toFixed(2)),
+        price: Number(effectivePrice.toFixed(2)),
       });
     }
 

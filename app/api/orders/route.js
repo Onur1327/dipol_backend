@@ -22,7 +22,11 @@ export async function GET(request) {
 
     await connectDB();
     const query = {};
-    if (user.role !== 'admin') query.user = user.userId;
+    if (user.role === 'admin') {
+      query.paymentStatus = 'paid';
+    } else {
+      query.user = user.userId;
+    }
 
     const orders = await Order.find(query)
       .populate('user', 'name email')
