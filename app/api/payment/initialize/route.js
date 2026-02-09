@@ -159,7 +159,7 @@ export async function POST(request) {
         address: shippingAddress.address || 'Istanbul',
         zipCode: shippingAddress.postalCode || '34000',
       },
-      basketItems: basketItems.map(item => ({ ...item, price: Number(item.price).toFixed(2) })),
+      basketItems: basketItems.map(item => ({ ...item, price: item.price })),
       callbackUrl: `${process.env.BACKEND_URL || 'http://localhost:3002'}/api/payment/callback`,
     };
 
