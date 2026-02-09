@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "next dev -p 3002",
     "seed": "node scripts/seed.js",
+    "clean-products": "node scripts/clean-products.js",
     "create-admin": "node scripts/create-admin.js",
     "build": "next build",
     "start": "next start",

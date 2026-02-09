@@ -56,13 +56,17 @@ export async function POST(request) {
         return NextResponse.json({ error: `${product.name} için yeterli stok yok` }, { status: 400, headers: getCorsHeaders(request) });
       }
 
-      calculatedTotal += product.price * item.quantity;
+      const effectivePrice = (product.comparePrice && product.comparePrice > 0)
+        ? Math.min(product.price, product.comparePrice)
+        : product.price;
+
+      calculatedTotal += effectivePrice * item.quantity;
       basketItems.push({
         id: `${product._id.toString()}_${basketItems.length}`,
         name: product.name + (item.color ? ` (${item.color}, ${item.size})` : ''),
         category1: 'Giyim',
         itemType: 'PHYSICAL',
-        price: Number((product.price * item.quantity).toFixed(2)),
+        price: Number((effectivePrice * item.quantity).toFixed(2)),
       });
     }
 
