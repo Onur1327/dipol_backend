@@ -66,7 +66,7 @@ export async function POST(request) {
         name: product.name + (item.color ? ` (${item.color}, ${item.size})` : ''),
         category1: 'Giyim',
         itemType: 'PHYSICAL',
-        price: Number(effectivePrice.toFixed(2)),
+        price: (effectivePrice * item.quantity).toFixed(2),
       });
     }
 
@@ -81,6 +81,10 @@ export async function POST(request) {
     }
 
     const finalTotal = basketItems.reduce((sum, item) => sum + parseFloat(item.price), 0);
+
+    console.log('[Payment Init] Basket Items:', basketItems);
+    console.log('[Payment Init] Calculated Final Total:', finalTotal);
+
     await User.findByIdAndUpdate(user.userId, { identityNumber }, { upsert: false });
 
     const tempOrder = await Order.create({
@@ -163,17 +167,26 @@ export async function POST(request) {
       callbackUrl: `${process.env.BACKEND_URL || 'http://localhost:3002'}/api/payment/callback`,
     };
 
+    console.log('[Payment Init] Sending to Iyzico:', JSON.stringify({ ...paymentData, paymentCard: '***' }, null, 2));
+
     const paymentResult = await initializePayment(paymentData);
+
     if (paymentResult.status === 'success') {
       if (paymentResult.threeDSHtmlContent) {
         return NextResponse.json({ success: true, threeDSHtmlContent: paymentResult.threeDSHtmlContent }, { headers: getCorsHeaders(request) });
       }
       return NextResponse.json({ error: 'Ödeme onay sayfası oluşturulamadı', details: paymentResult }, { status: 400, headers: getCorsHeaders(request) });
     } else {
-      await Order.findByIdAndUpdate(tempOrder._id, { paymentStatus: 'failed' });
+      console.error('[Payment Init] Iyzico Failure:', paymentResult);
+      await Order.findByIdAndUpdate(tempOrder._id, {
+        paymentStatus: 'failed',
+        paymentError: paymentResult.errorMessage || 'Ödeme işlemi başlatılamadı',
+        paymentDetails: paymentResult
+      });
       return NextResponse.json({ error: paymentResult.errorMessage || 'Ödeme işlemi başarısız', details: paymentResult }, { status: 400, headers: getCorsHeaders(request) });
     }
   } catch (error) {
+    console.error('[Payment Init] System Error:', error);
     return NextResponse.json({ error: error.message || 'Ödeme işlemi başlatılamadı' }, { status: 500, headers: getCorsHeaders(request) });
   }
 }
