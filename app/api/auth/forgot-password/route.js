@@ -34,7 +34,9 @@ export async function POST(request) {
       await user.save();
       try {
         await sendPasswordResetEmail(user.email, resetToken);
-      } catch (emailError) { }
+      } catch (emailError) {
+        console.error('Şifre sıfırlama maili gönderilemedi:', emailError);
+      }
     }
 
     return NextResponse.json({

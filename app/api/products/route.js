@@ -56,6 +56,12 @@ export async function GET(request) {
       ];
     }
 
+    const onSale = searchParams.get('onSale');
+    if (onSale === 'true') {
+      query.comparePrice = { $gt: 0 };
+      query.$expr = { $gt: ["$comparePrice", "$price"] };
+    }
+
     const products = await Product.find(query)
       .select('name slug price comparePrice images stock featured status category createdAt')
       .populate('category', 'name slug')
