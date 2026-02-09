@@ -76,7 +76,7 @@ export async function POST(request) {
         name: 'Kargo Ücreti',
         category1: 'Lojistik',
         itemType: 'VIRTUAL',
-        price: Number(shippingCost.toFixed(2)),
+        price: shippingCost.toFixed(2),
       });
     }
 
@@ -179,7 +179,7 @@ export async function POST(request) {
       }
       return NextResponse.json({ error: 'Ödeme onay sayfası oluşturulamadı', details: paymentResult }, { status: 400, headers: getCorsHeaders(request) });
     } else {
-      console.error('[Payment Init] Iyzico Failure:', paymentResult);
+      console.error('[Payment] Iyzico Failure Response:', JSON.stringify(paymentResult));
       await Order.findByIdAndUpdate(tempOrder._id, {
         paymentStatus: 'failed',
         paymentError: paymentResult.errorMessage || 'Ödeme işlemi başlatılamadı',
