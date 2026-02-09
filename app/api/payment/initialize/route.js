@@ -164,8 +164,10 @@ export async function POST(request) {
         zipCode: shippingAddress.postalCode || '34000',
       },
       basketItems: basketItems.map(item => ({ ...item, price: item.price })),
-      callbackUrl: `${process.env.BACKEND_URL || 'http://localhost:3002'}/api/payment/callback`,
+      callbackUrl: `${process.env.BACKEND_URL || (request.headers.get('x-forwarded-proto') || 'https') + '://' + request.headers.get('host')}/api/payment/callback`,
     };
+
+    console.log('[Payment] Sending to Iyzico. Price:', paymentData.price, 'Items Sum:', finalTotal);
 
     console.log('[Payment Init] Sending to Iyzico:', JSON.stringify({ ...paymentData, paymentCard: '***' }, null, 2));
 
