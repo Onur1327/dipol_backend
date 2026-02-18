@@ -60,30 +60,38 @@ export async function POST(request) {
         ? Math.min(product.price, product.comparePrice)
         : product.price;
 
-      calculatedTotal += effectivePrice * item.quantity;
+      // Her kalemin birim fiyatını kuruş hassasiyetiyle formatla
+      const itemPriceStr = effectivePrice.toFixed(2);
+      const itemTotalStr = (effectivePrice * item.quantity).toFixed(2);
+
       basketItems.push({
         id: `${product._id.toString()}_${basketItems.length}`,
         name: product.name + (item.color ? ` (${item.color}, ${item.size})` : ''),
         category1: 'Giyim',
         itemType: 'PHYSICAL',
-        price: (effectivePrice * item.quantity).toFixed(2),
+        price: itemTotalStr, // Kalem toplam tutarı (Birim Fiyat x Adet)
       });
+
+      // Toplamı formatlanmış değer üzerinden ekle (kuruş farklarını önlemek için)
+      calculatedTotal += parseFloat(itemTotalStr);
     }
 
     if (shippingCost && shippingCost > 0) {
+      const shippingPriceStr = shippingCost.toFixed(2);
       basketItems.push({
         id: 'SHIPPING_FEE',
         name: 'Kargo Ücreti',
         category1: 'Lojistik',
         itemType: 'VIRTUAL',
-        price: shippingCost.toFixed(2),
+        price: shippingPriceStr,
       });
+      calculatedTotal += parseFloat(shippingPriceStr);
     }
 
-    const finalTotal = basketItems.reduce((sum, item) => sum + parseFloat(item.price), 0);
+    const finalTotal = calculatedTotal;
 
     console.log('[Payment Init] Basket Items:', basketItems);
-    console.log('[Payment Init] Calculated Final Total:', finalTotal);
+    console.log('[Payment Init] Calculated Final Total:', finalTotal.toFixed(2));
 
     await User.findByIdAndUpdate(user.userId, { identityNumber }, { upsert: false });
 
@@ -116,7 +124,13 @@ export async function POST(request) {
     const nameParts = shippingAddress.name.trim().split(/\s+/);
     const firstName = nameParts.length > 1 ? nameParts.slice(0, -1).join(' ') : nameParts[0];
     const lastName = nameParts.length > 1 ? nameParts[nameParts.length - 1] : 'Butik';
-    const clientIp = request.headers.get('x-forwarded-for')?.split(',')[0] || '127.0.0.1';
+    // IP Adresi Tespiti ve Düzenleme
+    let clientIp = request.headers.get('x-forwarded-for')?.split(',')[0] || '127.0.0.1';
+    // Iyzico bazen ::1 veya yerel IP'leri kabul etmeyebilir, bu durumda bilinen bir test IP'si kullan
+    if (clientIp === '::1' || clientIp === '127.0.0.1' || clientIp.startsWith('192.168')) {
+      // clientIp = '85.105.105.105'; // Gerekirse gerçek bir IP ile değiştirilebilir
+      console.log('[Payment Init] Local IP detected:', clientIp);
+    }
 
     const paymentData = {
       locale: 'tr',
