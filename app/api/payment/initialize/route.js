@@ -117,20 +117,25 @@ export async function POST(request) {
 
     const rawPhone = contactInfo.phone.replace(/\D/g, '');
     let gsmNumber = rawPhone;
-    if (rawPhone.length === 11 && rawPhone.startsWith('0')) gsmNumber = `+90${rawPhone.substring(1)}`;
-    else if (rawPhone.length === 10 && !rawPhone.startsWith('0')) gsmNumber = `+90${rawPhone}`;
-    else if (!rawPhone.startsWith('+')) gsmNumber = `+${rawPhone}`;
+    if (rawPhone.startsWith('90') && rawPhone.length >= 12) {
+      gsmNumber = `+${rawPhone}`;
+    } else if (rawPhone.startsWith('0')) {
+      gsmNumber = `+90${rawPhone.substring(1)}`;
+    } else if (rawPhone.length === 10) {
+      gsmNumber = `+90${rawPhone}`;
+    } else if (!rawPhone.startsWith('+') && rawPhone.length > 0) {
+      gsmNumber = `+${rawPhone}`;
+    } else if (rawPhone.length === 0) {
+      gsmNumber = '+905000000000'; // Fallback for invalid phone
+    }
 
     const nameParts = shippingAddress.name.trim().split(/\s+/);
     const firstName = nameParts.length > 1 ? nameParts.slice(0, -1).join(' ') : nameParts[0];
     const lastName = nameParts.length > 1 ? nameParts[nameParts.length - 1] : 'Butik';
     // IP Adresi Tespiti ve Düzenleme
     let clientIp = request.headers.get('x-forwarded-for')?.split(',')[0] || '127.0.0.1';
-    // Iyzico bazen ::1 veya yerel IP'leri kabul etmeyebilir, bu durumda bilinen bir test IP'si kullan
-    if (clientIp === '::1' || clientIp === '127.0.0.1' || clientIp.startsWith('192.168')) {
-      if (process.env.NODE_ENV !== 'production') {
-        console.log('[Payment Init] Local IP detected:', clientIp);
-      }
+    if (clientIp === '::1' || clientIp === '127.0.0.1' || clientIp.includes('192.168') || clientIp.includes('10.0')) {
+      clientIp = '85.105.105.105'; // Use a valid public IP as fallback for Iyzico
     }
 
     const paymentData = {
@@ -179,7 +184,12 @@ export async function POST(request) {
         zipCode: shippingAddress.postalCode || '34000',
       },
       basketItems: basketItems.map(item => ({ ...item, price: item.price })),
-      callbackUrl: `${process.env.BACKEND_URL || (request.headers.get('x-forwarded-proto') || 'https') + '://' + request.headers.get('host')}/api/payment/callback`,
+      callbackUrl: (() => {
+        let base = process.env.BACKEND_URL || (request.headers.get('x-forwarded-proto') || 'https') + '://' + request.headers.get('host');
+        if (!base.startsWith('http')) base = `https://${base}`;
+        const url = new URL('/api/payment/callback', base);
+        return url.toString();
+      })(),
     };
 
     console.log('[Payment] Sending to Iyzico. Price:', paymentData.price, 'Items Sum:', finalTotal);
