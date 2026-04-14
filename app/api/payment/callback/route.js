@@ -27,7 +27,24 @@ export async function POST(request) {
 
     const { paymentId, status, conversationId, mdStatus } = body;
     const getFrontendUrl = () => {
-      let url = process.env.FRONTEND_URL || process.env.NEXT_PUBLIC_FRONTEND_URL || (request.headers.get('origin') || (request.headers.get('x-forwarded-proto') || 'https') + '://' + request.headers.get('host'));
+      // 1. En öncelikli: Çevresel değişken (Vercel Panelinden gelen)
+      let url = process.env.FRONTEND_URL || process.env.NEXT_PUBLIC_FRONTEND_URL;
+
+      // 2. Eğer değişken yoksa, isteğin geldiği host'a bak (ama Iyzico ise görmezden gel)
+      if (!url) {
+        const origin = request.headers.get('origin');
+        const host = request.headers.get('host');
+        const proto = request.headers.get('x-forwarded-proto') || 'https';
+
+        if (origin && !origin.includes('iyzipay')) {
+          url = origin;
+        } else {
+          // Backend üzerinden ana siteyi tahmin et (Genellikle aynı domain veya localhost)
+          url = `${proto}://${host}`;
+          // Eğer backend Vercel'deyse ve ana site tanımlı değilse, bu kısım kritik
+        }
+      }
+
       if (!url.startsWith('http')) url = `https://${url}`;
       return url.replace(/\/+$/, '');
     };
