@@ -26,7 +26,12 @@ export async function POST(request) {
     }
 
     const { paymentId, status, conversationId, mdStatus } = body;
-    const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3001';
+    const getFrontendUrl = () => {
+      let url = process.env.FRONTEND_URL || process.env.NEXT_PUBLIC_FRONTEND_URL || (request.headers.get('origin') || (request.headers.get('x-forwarded-proto') || 'https') + '://' + request.headers.get('host'));
+      if (!url.startsWith('http')) url = `https://${url}`;
+      return url.replace(/\/+$/, '');
+    };
+    const frontendUrl = getFrontendUrl();
 
     if (!conversationId) return NextResponse.redirect(`${frontendUrl}/sepet?error=SiparisIDBulunamadi`, 303);
 
@@ -82,7 +87,7 @@ export async function POST(request) {
     }
   } catch (error) {
     console.error('İyzico callback hatası:', error);
-    const frontendUrl = process.env.FRONTEND_URL || 'http://localhost:3001';
+    const frontendUrl = getFrontendUrl();
     return NextResponse.redirect(`${frontendUrl}/sepet?error=SistemselHata`, 303);
   }
 }
