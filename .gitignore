@@ -36,9 +36,19 @@ yarn-error.log*
 # vercel
 .vercel
 
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# production
+/build
+/out
 
-.vercel
+# logs
+*.log
+iyzico_manual.log
+iyzico_error.log
+
+# env
 .env*.local
+
+# next.js
+next-env.d.ts
+.vercel
+

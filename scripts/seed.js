@@ -23,6 +23,7 @@ async function seed() {
       email: 'admin@dipolbutik.com',
       password: hashedPassword,
       role: 'admin',
+      emailVerified: true,
     });
 
     const testUser = await User.create({
@@ -30,6 +31,7 @@ async function seed() {
       email: 'test@dipolbutik.com',
       password: hashedPassword,
       role: 'user',
+      emailVerified: true,
     });
 
     console.log('Kullanıcılar oluşturuldu');

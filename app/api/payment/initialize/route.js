@@ -128,8 +128,9 @@ export async function POST(request) {
     let clientIp = request.headers.get('x-forwarded-for')?.split(',')[0] || '127.0.0.1';
     // Iyzico bazen ::1 veya yerel IP'leri kabul etmeyebilir, bu durumda bilinen bir test IP'si kullan
     if (clientIp === '::1' || clientIp === '127.0.0.1' || clientIp.startsWith('192.168')) {
-      // clientIp = '85.105.105.105'; // Gerekirse gerçek bir IP ile değiştirilebilir
-      console.log('[Payment Init] Local IP detected:', clientIp);
+      if (process.env.NODE_ENV !== 'production') {
+        console.log('[Payment Init] Local IP detected:', clientIp);
+      }
     }
 
     const paymentData = {
@@ -183,7 +184,9 @@ export async function POST(request) {
 
     console.log('[Payment] Sending to Iyzico. Price:', paymentData.price, 'Items Sum:', finalTotal);
 
-    console.log('[Payment Init] Sending to Iyzico:', JSON.stringify({ ...paymentData, paymentCard: '***' }, null, 2));
+    if (process.env.NODE_ENV !== 'production') {
+      console.log('[Payment Init] Sending to Iyzico:', JSON.stringify({ ...paymentData, paymentCard: '***' }, null, 2));
+    }
 
     const paymentResult = await initializePayment(paymentData);
 
